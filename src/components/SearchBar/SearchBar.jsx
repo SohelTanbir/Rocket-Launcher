@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchBar = () => {
     return (
-        <div className="searchbar bg-light d-flex align-items-center" style={{height:'50vh'}}>
+        <div className="searchbar bg-light d-flex align-items-center" style={{height:'50vh', backgroundImage:`url(require("../../images/rocket-bg.jpg"))`}}>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 mx-auto">
