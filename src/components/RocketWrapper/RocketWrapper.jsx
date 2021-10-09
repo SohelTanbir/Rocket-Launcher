@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { dataLoader } from '../../redux/action/DataLoadAction';
 import RocketCard from '../RocketCard/RocketCard';
 
 
 const RocketWrapper = () => {
+const rockets = useSelector(state => {
+    return state.rockets.rockets
+});
+console.log(rockets)
+const dispatch = useDispatch();
+
+useEffect(()=> dispatch(dataLoader()), [dispatch])
+
+
     return (
         <>
             <div className="container-fluid pt-3">
@@ -27,7 +39,11 @@ const RocketWrapper = () => {
             </div>
             <hr style={{ opacity: .1 }} />
             <div className="container">
-                <RocketCard />
+            <div className="row">
+                {
+                   rockets.map( rocket => <RocketCard rocket={rocket}/>)
+               }
+            </div>
             </div>
         </>
     )
