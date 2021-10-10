@@ -1,6 +1,7 @@
 const initialState = {
     rockets: [],
-    searchName: ''
+    searchName: '',
+    filterData:''
 }
 
 const dataReducer  = (state = initialState, action) =>{
@@ -18,7 +19,13 @@ const dataReducer  = (state = initialState, action) =>{
                 searchName: action.payload
             }
             return newState
- 
+        }
+        case 'FILTER_DATA':{
+            const newState = {
+                ...state,
+                filterData: action.payload
+            }
+            return newState
         }
         default:{
             return state

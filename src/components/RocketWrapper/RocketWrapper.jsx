@@ -24,7 +24,7 @@ const RocketWrapper = () => {
                     <div className="filter  text-end col-md-2 col-sm-12">
                         <div class="input-group mb-3">
                             <select class="form-select" id="inputGroupSelect01">
-                                <option selected>Filter by</option>
+                                <option selected>Filter By</option>
                                 <option value="1">Last Week</option>
                                 <option value="2">Last Month</option>
                                 <option value="3">Last Year</option>
