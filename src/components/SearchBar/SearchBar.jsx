@@ -9,7 +9,7 @@ const SearchBar = () => {
         setSearchData(trimSearchValue)
 }
 const dispatch  = useDispatch();
-console.log(searchData)
+
     return (
         <div className="searchbar bg-light d-flex align-items-center" style={{height:'50vh', backgroundImage:`url(require("../../images/rocket-bg.jpg"))`}}>
             <div className="container">

@@ -4,7 +4,6 @@ import React from 'react';
 const RocketCard = ({rockets}) => {
 const { links, flight_number, details,rocket,mission_name, launch_success, launch_year, upcoming, launch_date_local, launch_date_unix, launch_date_utc, mission_id  } = rockets
 
-console.log(rockets)
     return (
             <div className="col-md-3">
                 <div className="card mb-3">

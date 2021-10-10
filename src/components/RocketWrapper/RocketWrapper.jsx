@@ -6,14 +6,14 @@ import RocketCard from '../RocketCard/RocketCard';
 
 
 const RocketWrapper = () => {
-const rockets = useSelector(state => {
-    return state.rockets.rockets[0]
-});
-const dispatch = useDispatch();
+    const rockets = useSelector(state => {
+        return state.rocketData
+    });
+    const rocketName = rockets.searchName.length? rockets.searchName:false;
+    const dispatch = useDispatch();
+    useEffect(() => dispatch(dataLoader()), [dispatch])
+    const filterData = rockets.rockets[0]?.filter(FilterRockets => rocketName?FilterRockets.rocket.rocket_name === `${rocketName}`: rockets);
 
-useEffect(()=> dispatch(dataLoader()), [dispatch])
-
-const filterData = rockets?.filter( FilterRockets=>   FilterRockets.rocket_name='Falcon 9')
     return (
         <>
             <div className="container-fluid pt-3">
@@ -38,12 +38,12 @@ const filterData = rockets?.filter( FilterRockets=>   FilterRockets.rocket_name=
             </div>
             <hr style={{ opacity: .1 }} />
             <div className="container">
-            <div className="row">
-                {
-                 filterData?.length?   filterData?.map( singleRocket => <RocketCard rockets={singleRocket}/>)
-                 : <h4 className="py-5 text-center text-danger">Sorry Data Not Found !</h4> 
-               }
-            </div>
+                <div className="row">
+                    {
+                        filterData?.length ? filterData?.map(singleRocket => <RocketCard rockets={singleRocket} />)
+                            : <h5 className="py-5 text-center text-danger">Sorry data not found! try another name</h5>
+                    }
+                </div>
             </div>
         </>
     )

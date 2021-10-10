@@ -1,6 +1,6 @@
 const initialState = {
     rockets: [],
-    searchByName: ''
+    searchName: ''
 }
 
 const dataReducer  = (state = initialState, action) =>{
@@ -15,7 +15,7 @@ const dataReducer  = (state = initialState, action) =>{
         case 'SEARCH_DATA':{
             const newState = {
                 ...state,
-                searchByName: action.payload
+                searchName: action.payload
             }
             return newState
  

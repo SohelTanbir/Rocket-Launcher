@@ -7,7 +7,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 const middleware  = applyMiddleware(thunk);
 
 const Reducers =  combineReducers({
-    rockets: dataReducer
+    rocketData: dataReducer
 })
 
  const store  = createStore(Reducers, composeWithDevTools(middleware))
